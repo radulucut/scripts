@@ -1,7 +1,7 @@
 # script-store
-[![npm](https://img.shields.io/npm/v/green-to-red)](https://www.npmjs.com/package/green-to-red)
-[![npm](https://img.shields.io/npm/dt/green-to-red)](https://www.npmjs.com/package/green-to-red)
-[![GitHub](https://img.shields.io/github/license/radulucut/green-to-red)](https://github.com/radulucut/green-to-red/blob/master/LICENSE)
+[![npm](https://img.shields.io/npm/v/script-store)](https://www.npmjs.com/package/script-store)
+[![npm](https://img.shields.io/npm/dt/script-store)](https://www.npmjs.com/package/script-store)
+[![GitHub](https://img.shields.io/github/license/radulucut/script-store)](https://github.com/radulucut/script-store/blob/master/LICENSE)
 
 ### Dynamic script loader
 
