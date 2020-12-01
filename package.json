@@ -1,10 +1,11 @@
 {
   "name": "script-store",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Dynamic script loader",
   "main": "index.js",
   "files": [
-    "index.js"
+    "index.js",
+    "index.d.ts"
   ],
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
