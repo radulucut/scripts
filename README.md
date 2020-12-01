@@ -25,4 +25,3 @@ store.load('script.js').then(() => {
 
 await store.load('script.js');
 ```
-```
