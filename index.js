@@ -36,6 +36,10 @@ class ScriptStore {
 
     return scriptState;
   }
+
+  isLoaded(url) {
+    return !!this.store[url];
+  }
 }
 
 module.exports = ScriptStore;

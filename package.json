@@ -1,6 +1,6 @@
 {
   "name": "script-store",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "Dynamic script loader",
   "main": "index.js",
   "files": [
