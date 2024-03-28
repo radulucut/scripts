@@ -1,7 +1,7 @@
 {
-  "name": "script-store",
-  "version": "1.0.3",
-  "description": "Dynamic script loader",
+  "name": "@radulucut/scripts",
+  "version": "2.0.0",
+  "description": "Dynamic script loader for DOM",
   "main": "index.js",
   "files": [
     "index.js",
@@ -12,7 +12,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/radulucut/script-store.git"
+    "url": "git+https://github.com/radulucut/scripts.git"
   },
   "keywords": [
     "dynamic",
@@ -20,10 +20,11 @@
     "loader",
     "browser"
   ],
-  "author": "Radu Lucut",
-  "license": "MIT",
   "bugs": {
-    "url": "https://github.com/radulucut/script-store/issues"
+    "url": "https://github.com/radulucut/scripts/issues"
   },
-  "homepage": "https://github.com/radulucut/script-store#readme"
+  "homepage": "https://github.com/radulucut/scripts#readme",
+  "author": "Radu Lucuț",
+  "license": "MIT",
+  "types": "./index.d.ts"
 }
