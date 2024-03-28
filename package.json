@@ -1,6 +1,6 @@
 {
   "name": "@radulucut/scripts",
-  "version": "2.0.0",
+  "version": "2.0.1",
   "description": "Dynamic script loader for DOM",
   "main": "index.js",
   "files": [

@@ -17,7 +17,7 @@ $ npm install @radulucut/scripts
 ```javascript
 import Scripts from "@radulucut/scripts";
 
-const scripts = new Scripts();
+const scripts = Scripts();
 
 scripts.Load(
   "./script.js",
