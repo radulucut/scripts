@@ -77,7 +77,7 @@ function Scripts() {
       const state = _store[url];
       _store[url] = true;
       // run all onload functions
-      for (let i = 0; i < state.length; i++) {
+      for (let i = 0; i < state[0].length; i++) {
         state[0][i]();
       }
     }
@@ -85,7 +85,7 @@ function Scripts() {
       const state = _store[url];
       _store[url] = false;
       // run all onerror functions
-      for (let i = 0; i < state.length; i++) {
+      for (let i = 0; i < state[1].length; i++) {
         state[1][i](error);
       }
     }
