@@ -1,18 +1,20 @@
 /**
  * Load scripts dynamically.
  *
+ * @param {Document} document - document object
+ *
  * @example
  * import Scripts from '@radlucut/scripts';
  *
- * const scripts = Scripts();
+ * const scripts = Scripts(document);
  *
  * scripts.Load('./script.js', () => {
  *   console.log('script loaded');
- * }, (error) => {
- *   console.error('Failed to load script', error);
+ * }, () => {
+ *   console.error('Failed to load script');
  * });
  */
-function Scripts() {
+function Scripts(document) {
   const _store = {};
 
   /**
@@ -24,18 +26,18 @@ function Scripts() {
    * @example
    * import Scripts from '@radlucut/scripts';
    *
-   * const scripts = Scripts();
+   * const scripts = Scripts(document);
    *
    * scripts.Load('./script.js', () => {
    *   console.log('script loaded');
-   * }, (error) => {
-   *   console.error('Failed to load script', error);
+   * }, () => {
+   *   console.error('Failed to load script');
    * });
    *
    * scripts.Load('https://code.jquery.com/jquery-3.5.1.min.js', () => {
    *   console.log('jQuery loaded');
-   * }, (error) => {
-   *   console.error('Failed to load jQuery', error);
+   * }, () => {
+   *   console.error('Failed to load jQuery');
    * });
    */
   function Load(url, onload, onerror) {
@@ -54,6 +56,7 @@ function Scripts() {
       }
       return;
     }
+    // script is loading
     if (state) {
       if (onload) {
         state[0].push(onload);
@@ -63,6 +66,7 @@ function Scripts() {
       }
       return;
     }
+    // script is not loaded
     state = [[], []];
     if (onload) {
       state[0].push(onload);
@@ -81,12 +85,12 @@ function Scripts() {
         state[0][i]();
       }
     }
-    script.onerror = (error) => {
+    script.onerror = (event) => {
       const state = _store[url];
       _store[url] = false;
       // run all onerror functions
       for (let i = 0; i < state[1].length; i++) {
-        state[1][i](error);
+        state[1][i](event);
       }
     }
     document.getElementsByTagName('head')[0].appendChild(script);
@@ -108,5 +112,7 @@ function Scripts() {
   }
 }
 
-module.exports = Scripts;
+if (typeof module !== 'undefined' && module.exports) {
+  module.exports = Scripts;
+}
 

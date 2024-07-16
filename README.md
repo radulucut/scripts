@@ -1,7 +1,8 @@
 # scripts - Dynamic script loader for DOM
 
-Load scripts dynamically and execute a callback when the script is loaded. If the script is already loaded, the callback is executed immediately.
+Load and keep track of scripts in the DOM.
 
+![](https://github.com/radulucut/scripts/workflows/Node%20CI/badge.svg)
 [![npm](https://img.shields.io/npm/v/@radulucut/scripts)](https://www.npmjs.com/package/@radulucut/scripts)
 [![npm](https://img.shields.io/npm/dt/@radulucut/scripts)](https://www.npmjs.com/package/@radulucut/scripts)
 [![GitHub](https://img.shields.io/github/license/radulucut/scripts)](https://github.com/radulucut/scripts/blob/master/LICENSE)
@@ -17,15 +18,15 @@ $ npm install @radulucut/scripts
 ```javascript
 import Scripts from "@radulucut/scripts";
 
-const scripts = Scripts();
+const scripts = Scripts(document);
 
 scripts.Load(
   "./script.js",
   () => {
     console.log("script loaded");
   },
-  (error) => {
-    console.error("Failed to load script", error);
+  () => {
+    console.error("Failed to load script");
   }
 );
 
@@ -34,8 +35,8 @@ scripts.Load(
   () => {
     console.log("jQuery loaded");
   },
-  (error) => {
-    console.error("Failed to load jQuery", error);
+  () => {
+    console.error("Failed to load jQuery");
   }
 );
 

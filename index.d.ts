@@ -5,15 +5,17 @@ declare module "@radulucut/scripts" {
    * @example
    * import Scripts from '@radlucut/scripts';
    *
-   * const scripts = Scripts();
+   * @param {Document} document - document object
+   *
+   * const scripts = Scripts(document);
    *
    * scripts.Load('./script.js', () => {
    *   console.log('script loaded');
-   * }, (error) => {
-   *   console.error('Failed to load script', error);
+   * }, () => {
+   *   console.error('Failed to load script');
    * });
    */
-  function Scripts(): {
+  function Scripts(document: Document): {
     /**
      * Load a script dynamically. If the script is already loaded, the onload function will be called immediately.
      * @param {string} url - url of the script
@@ -23,24 +25,24 @@ declare module "@radulucut/scripts" {
      * @example
      * import Scripts from '@radlucut/scripts';
      *
-     * const scripts = Scripts();
+     * const scripts = Scripts(document);
      *
      * scripts.Load('./script.js', () => {
      *   console.log('script loaded');
-     * }, (error) => {
-     *   console.error('Failed to load script', error);
+     * }, () => {
+     *   console.error('Failed to load script');
      * });
      *
      * scripts.Load('https://code.jquery.com/jquery-3.5.1.min.js', () => {
      *   console.log('jQuery loaded');
-     * }, (error) => {
-     *   console.error('Failed to load jQuery', error);
+     * }, () => {
+     *   console.error('Failed to load jQuery');
      * });
      */
     Load(
       url: string,
       onload?: () => void,
-      onerror?: (error: Error) => void
+      onerror?: (event: Event) => void
     ): void;
 
     /**
